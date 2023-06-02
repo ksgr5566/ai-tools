@@ -34,6 +34,10 @@ pydub = "^0.25.1"
 google-cloud-translate = "^3.11.1"
 watchgod = "^0.8.2"
 
+[tool.poetry.extras]
+local_dev = [
+  "spacy-transformers"
+]
 
 [build-system]
 requires = ["poetry-core"]

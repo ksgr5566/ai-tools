@@ -1,5 +1,5 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9-slim
+# Using anibali as the base image
+FROM anibali/pytorch:2.0.0-cuda11.8-ubuntu22.04
 
 # Install Git
 RUN apt-get update && apt-get install -y git
@@ -14,6 +14,9 @@ COPY poetry.lock pyproject.toml /app/
 RUN pip install poetry && \
     poetry config virtualenvs.create false && \
     poetry install --no-dev --no-root
+
+# Download Spacy model
+RUN python -m spacy download en_core_web_sm
 
 # Copy the rest of the application code to the working directory
 COPY . /app/
