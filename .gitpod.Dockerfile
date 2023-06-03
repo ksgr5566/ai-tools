@@ -2,7 +2,7 @@
 FROM anibali/pytorch:2.0.0-cuda11.8-ubuntu22.04
 
 # Install Git
-RUN apt-get update && apt-get install -y git
+RUN sudo apt-get update && apt-get install -y git
 
 # Set the working directory to /app
 WORKDIR /app
