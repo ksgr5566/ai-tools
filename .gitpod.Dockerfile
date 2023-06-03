@@ -1,6 +1,8 @@
 # Using anibali as the base image
 FROM anibali/pytorch:2.0.0-cuda11.8-ubuntu22.04
 
+USER root
+
 # Install Git
 RUN sudo apt-get update && apt-get install -y git
 
